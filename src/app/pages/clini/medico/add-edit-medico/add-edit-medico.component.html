@@ -17,11 +17,13 @@
           </mat-form-field>
           <mat-form-field fxFlex="50" color="primary">
             <mat-label class="color-primary">CPF/CNPJ</mat-label>
-            <input matInput formControlName="cpf">
+            <input matInput formControlName="cpf" [required]="true" [minLength]="3">
+            <mat-error *ngIf="invalidForm" class="error" >{{'Campo Obrigatório'}}</mat-error>
           </mat-form-field>
           <mat-form-field fxFlex="50" color="primary">
             <mat-label class="color-primary">Nome Completo</mat-label>
-            <input matInput formControlName="nome">
+            <input matInput formControlName="nome"[required]="true" [minLength]="3">
+            <mat-error *ngIf="invalidForm" class="error" >{{'Campo Obrigatório'}}</mat-error>
           </mat-form-field>
 
         </div>
